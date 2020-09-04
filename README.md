@@ -37,7 +37,7 @@ conda install -y\
     qt==5.12.9 \
     pyqt==5.12.3 \
     pydm==1.10.1
-git clone --recursive https://github.com/slaclab/pydm/archive/v1.10.3.tar.gz &&\
+git clone --recursive https://github.com/lnls-sirius/pydm-opi/ &&\
     cd pydm-opi/cons-common && pip install . && cd .. && pip install .
 ```
 
