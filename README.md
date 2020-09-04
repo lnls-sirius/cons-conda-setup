@@ -16,7 +16,7 @@ sudo /bin/bash -c 'source /usr/local/share/Miniconda3/etc/profile.d/conda.sh &&\
 	conda update -n base -c defaults conda'
 ```
 
-Now that **miniconda** is installed and ready, we create the environment **cons** at `/usr/local/share` so it will be visible to every user. By default conda will create local environments at `~/...`:
+Now that **miniconda** is installed and ready, we create the environment **cons** at `/usr/local/share` so it will be visible to every user. By default conda will create  environments locally at `~/...`:
 ```bash
 sudo /bin/bash -c 'source /usr/local/share/Miniconda3/etc/profile.d/conda.sh &&\
 	conda create python=3.6.10 -y -p /usr/local/share/Miniconda3/envs/cons'
