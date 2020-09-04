@@ -1,6 +1,6 @@
 # Miniconda installers contain the conda package manager and Python. 
 In order to keep `~/.bashrc` clean the command `conda install` will no be issued,
-we will be using `source /usr/local/share/Miniconda3/etc/profile.d/conda.sh` instead.
+we will be using `source <conda_dir>/etc/profile.d/conda.sh` instead.
 
 ## Download the installer
 Here we download **miniconda** and install at `/usr/local/share/Miniconda3`. Due to the install path of choice,
