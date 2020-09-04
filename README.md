@@ -22,7 +22,7 @@ sudo /bin/bash -c 'source /usr/local/share/Miniconda3/etc/profile.d/conda.sh &&\
 	conda create python=3.6.10 -y -p /usr/local/share/Miniconda3/envs/cons'
 ```
 
-In order to activate the **cons** environment:
+In order to activate the **cons** environment in a posix compliant shell:
 ```bash
 source /usr/local/share/Miniconda3/etc/profile.d/conda.sh
 conda activate /usr/local/share/Miniconda3/envs/cons
