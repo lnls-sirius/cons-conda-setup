@@ -66,7 +66,7 @@ In order to launch without a previously activated conda env (using `python subpr
     conda activate cons && sirius-hla-as-ap-conlauncher.py'
 ```
 
-## Usefull commands...
+## Useful commands...
 |Command|Description|
 |-------|-----------|
 |conda info|General conda information|
