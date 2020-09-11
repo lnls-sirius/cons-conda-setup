@@ -8,7 +8,7 @@ Public GPG key to trusted store
 ```bash
 curl https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc | gpg --dearmor > /tmp/conda.gpg
 install -o root -g root -m 644 /tmp/conda.gpg /usr/share/keyrings/conda-archive-keyring.gpg
-rm /tmp/conda.gpg
+rm -f /tmp/conda.gpg
 
 # Check whether fingerprint is correct (will output an error message otherwise)
 gpg --keyring /usr/share/keyrings/conda-archive-keyring.gpg --no-default-keyring --fingerprint 34161F5BF5EB1D4BFBBB8F0A8AEB4F8B29D82806
