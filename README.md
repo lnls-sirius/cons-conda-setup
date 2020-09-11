@@ -61,7 +61,7 @@ sudo /bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh && conda activate co
 ## CONS Usage
 In order to launch without a previously activated conda env (using `python subprocess` or  `.desktop` files...):
 ```bash
-sudo /bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh &&\
+/bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh &&\
     conda activate cons && sirius-hla-as-ap-conlauncher.py'
 ```
 
