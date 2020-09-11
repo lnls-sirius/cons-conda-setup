@@ -1,4 +1,4 @@
-# Miniconda installers contain the conda package manager and Python. 
+# Conda package manager and Python. 
 In order to keep `~/.bashrc` clean the command `conda install` will no be issued,
 we will be using `source <conda_dir>/etc/profile.d/conda.sh` instead. In an attempt to conform with the
 [Filesystem Hierarchy Standard](https://www.pathname.com/fhs/pub/fhs-2.3.html#OPTADDONAPPLICATIONSOFTWAREPACKAGES) the conda distribution will be installed at `/opt`.
@@ -35,7 +35,10 @@ sudo /bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh && conda update -y -
 
 Now that **conda** is installed and ready, we create the environment **cons** at `/opt` so it will be visible to every user. By default conda will create  environments locally at `~/...`:
 ```bash
-sudo /bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh && conda create python=3.6.10 -y -p /opt/conda/envs/cons'
+sudo /bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh &&\
+    conda create python=3.6.10 -y -p /opt/conda/envs/cons'
+sudo /bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh &&\
+    conda activate cons && conda config --add channels conda-forge && conda config --set channel_priority strict'
 ```
 
 In order to activate the **cons** environment in a posix compliant shell:
@@ -44,24 +47,22 @@ source /opt/conda/etc/profile.d/conda.sh
 conda activate cons
 ```
 
-## CONS Setup
-As the root user:
+Installing `pydm-opi` and dependencies:
 ```bash
-conda config --add channels conda-forge
-conda activate cons
-conda install -y\
-    qt==5.12.9 \
-    pyqt==5.12.3 \
-    pydm==1.10.1
-git clone --recursive https://github.com/lnls-sirius/pydm-opi/ &&\
-    cd pydm-opi/cons-common && pip install . && cd .. && pip install .
+sudo /bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh && conda activate cons &&\
+    conda install -y \
+        qt==5.12.9 \
+        pyqt==5.12.3 \
+        pydm==1.10.2 &&\
+    git clone --recursive https://github.com/lnls-sirius/pydm-opi/ /tmp/pydm-opi &&\
+    cd /tmp/pydm-opi/cons-common && pip install . && cd .. && pip install . && rm -rf /tmp/pydm-opi'
 ```
 
 ## CONS Usage
 In order to launch without a previously activated conda env (using `python subprocess` or  `.desktop` files...):
 ```bash
 sudo /bin/bash -c 'source /opt/conda/etc/profile.d/conda.sh &&\
-	conda activate cons && sirius-hla-as-ap-conlauncher.py'
+    conda activate cons && sirius-hla-as-ap-conlauncher.py'
 ```
 
 ## Usefull commands...
