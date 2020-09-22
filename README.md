@@ -1,6 +1,6 @@
 # Conda package manager and Python. 
-In order to keep `~/.bashrc` clean, the command `conda install` will no be issued,
-we will be using `source <conda_dir>/etc/profile.d/conda.sh` instead. In an attempt to conform with the
+In order to keep `~/.bashrc` clean, the command `conda install` will no be issued.
+We will be using `source <conda_dir>/etc/profile.d/conda.sh` instead. In an attempt to conform with the
 [Filesystem Hierarchy Standard](https://www.pathname.com/fhs/pub/fhs-2.3.html#OPTADDONAPPLICATIONSOFTWAREPACKAGES) the conda distribution will be installed at `/opt`.
 
 ## Debian based
